@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">School Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br><br>
+        
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number"><br><br>
+    
+        <button type="submit">Submit</button>
+    </form>
+    
+    {% if success_message %}
+        <p style="color: green;">{{ success_message }}</p>
+    {% endif %}
+      
+</body>
+</html>
